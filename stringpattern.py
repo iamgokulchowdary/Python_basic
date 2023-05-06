@@ -138,7 +138,7 @@ def pattern(string, list=[]):
             Q = [[" "for col in range(5)]for row in range(5)]
             for row in range(5):
                 for col in range(5):
-                    if (col==0)or(row==0)or(col==4 and row in range(3))or(row==4 and col in range(3))or((row==3 and col==3)or(row==4 and col==4)):
+                    if(col==0 and row not in [0,4]) or (row==0 and col not in [0,4]) or (col==4 and row in range(1,3)) or (row==4 and col in range(1,3)) or (row==3 and col==3) or (row==4 and col==4):
                         Q[row][col]="*"
             list.append(Q)
 
